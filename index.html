@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Fiddler</title>
+    <link rel="shortcut icon" href="">
+    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
+
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div>
+        <button id="btnCompile" type="button" class="btn btn-primary btn-sm">Compile</button>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div>Html</div>
+                <textarea id="txaHtml" class="col-md-12 editor"></textarea>
+            </div>
+            <div class="col-md-2">
+                <div>Css</div>
+                <textarea id="txaCss" class="col-md-12 editor"></textarea>
+            </div>
+            <div class="col-md-2">
+                <div>Javascript</div>
+                <textarea id="txaJs" class="col-md-12 editor"></textarea>
+            </div>
+            <div id="viewer" class="col-md-6">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="plugins/jquery-2.0.3.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/handlebars-v2.0.0.js"></script>
+    <script id="tmpl" type="text/x-handlebars-template">{{{body}}}</script>
+    <script src="scripts/app.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</body>
+
+</html>
