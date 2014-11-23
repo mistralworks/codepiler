@@ -1,3 +1,75 @@
-.editor{
-height: 500px;
+.navbar-transparent {
+    background: #996699;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.navbar-transparent {
+    height: 50px !important;
+}
+.navbar-transparent .navbar-nav > li > a {
+    padding-top: 20px !important;
+    padding-bottom: 15px !important;
+}
+.navbar-toggle {
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+.sharebtn {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.sharebtn i {
+    font-size: 18px;
+}
+.sharebtn:hover {
+    color: #fff;
+    text-decoration: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.workplace {
+    background: #774377;
+    padding: 20px;
+}
+textarea {
+    /* The following three rules make a difference in the script */
+    overflow: hidden;
+    line-height: 13px;
+    font-size: 13px;
+    border: 0px solid;
+    padding: 10px;
+    font-family: monospace;
+    margin: 0;
+    display: block;
+    outline: none;
+}
+textarea:focus {
+    border-color: transparent;
+}
+.code-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-left: 20px;
+}
+.line-nums {
+    font-size: 13px;
+    line-height: 13px;
+    padding: 10px 4px;
+    font-family: monospace;
+    background: #EEE;
+    position: absolute;
+    width: 20px;
+    left: -20px;
+    bottom: 0;
+    top: 0;
+    text-align: right;
 }

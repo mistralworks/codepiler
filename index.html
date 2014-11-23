@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Fiddler</title>
+    <title>Mistral Labs | Codepiler</title>
     <link rel="shortcut icon" href="">
-    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/bootstrap.css" rel="stylesheet">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="scripts/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="scripts/bootstrap.min.js"></script>
     <link href="styles/app.css" rel="stylesheet" type="text/css" />
 
     <!--[if IE]>
@@ -18,35 +24,125 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div>
-        <button id="btnCompile" type="button" class="btn btn-primary btn-sm">Compile</button>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <div>Html</div>
-                <textarea id="txaHtml" class="col-md-12 editor"></textarea>
+    <div class="navbar navbar-transparent navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    CODEPILER
+                </a>
             </div>
-            <div class="col-md-2">
-                <div>Css</div>
-                <textarea id="txaCss" class="col-md-12 editor"></textarea>
-            </div>
-            <div class="col-md-2">
-                <div>Javascript</div>
-                <textarea id="txaJs" class="col-md-12 editor"></textarea>
-            </div>
-            <div id="viewer" class="col-md-6">
-                
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a id="btnCompile" style="cursor:pointer;"><i class="fa fa-refresh fa-fw"></i>&nbsp;Compile Code</a>
+                    </li>
+                </ul>
+                <ul id="onepagenav" class="nav navbar-nav navbar-right">
+                    <li><a href="http://labs.mistralworks.com/">Back to Labs</a>
+                    </li>
+                    <li><a href="" data-toggle="modal" data-target="#shareModal">Share</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div role="tabpanel">
 
-    <script src="plugins/jquery-2.0.3.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="plugins/handlebars-v2.0.0.js"></script>
-    <script id="tmpl" type="text/x-handlebars-template">{{{body}}}</script>
-    <script src="scripts/app.js"></script>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">HTML</a>
+                        </li>
+                        <li role="presentation"><a href="#css" aria-controls="css" role="tab" data-toggle="tab">CSS</a>
+                        </li>
+                        <li role="presentation"><a href="#javascript" aria-controls="javascript" role="tab" data-toggle="tab">JAVASCRIPT</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="html">
+                            <div class="code-container">
+                                <div class="line-nums"><span>1</span>
+                                </div>
+                                <textarea id="txaHtml" class="col-md-12 editor"></textarea>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="css">
+                            <div class="code-container">
+                                <div class="line-nums"><span>1</span>
+                                </div>
+                                <textarea id="txaCss" class="col-md-12 editor"></textarea>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="javascript">
+                            <div class="code-container">
+                                <div class="line-nums"><span>1</span>
+                                </div>
+                                <textarea id="txaJs" class="col-md-12 editor"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="viewer" class="col-md-8">
+
+            </div>
+        </div>
+        <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareTitle" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title" id="shareTitle">Spread the words!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" style="margin-left:0px; margin-right:0px;">
+                            <div class="col-md-3 col-sm-3">
+                                <a class="sharebtn popup" href="https://www.facebook.com/sharer/sharer.php?u=http://labs.mistralworks.com/codepiler/index.html" style="background:#306199;">
+                                    <i class="fa fa-facebook fa-fw"></i>&nbsp;facebook
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <a class="sharebtn popup" href="https://twitter.com/home?status=A%20simple%20code%20compiler%20http://labs.mistralworks.com/codepiler/index.html" style="background:#26c4f1;">
+                                    <i class="fa fa-twitter fa-fw"></i>&nbsp;twitter
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <a class="sharebtn popup" href="https://plus.google.com/share?url=http://labs.mistralworks.com/codepiler/index.html" style="background:#e93f2e;">
+                                    <i class="fa fa-google-plus fa-fw"></i>&nbsp;google+
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <a class="sharebtn popup" href="https://pinterest.com/pin/create/button/?url=http://labs.mistralworks.com/img/codepiler.png&media=http://labs.mistralworks.com/codepiler/index.html&description=A%20simple%20code%20compiler" style="background:#b81621;">
+                                    <i class="fa fa-pinterest fa-fw"></i>&nbsp;pinterest
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="plugins/handlebars-v2.0.0.js"></script>
+        <script id="tmpl" type="text/x-handlebars-template">
+            {
+                {
+                    {
+                        body
+                    }
+                }
+            }
+        </script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/behave.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 </body>
 
 </html>
